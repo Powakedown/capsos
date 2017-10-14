@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.samu-phone {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+}
+.samu-phone {
+  position: absolute;
+  bottom: 15px;
+}
+.form-split {
+  width: 50%;
+  float: left;
+}
+select#case_age_type {
+  font-size: 24px;
+}
+input#case_phone {
+  margin-bottom: 40px;
+}

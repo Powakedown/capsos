@@ -2,6 +2,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+//= require jquery-fileupload/basic
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
 
 $(document).ready(function() {
   $(window).scroll(function() {
@@ -22,4 +25,7 @@ $(document).ready(function() {
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
   });
+
+  $('.attachinary-input').attachinary();
+
 });

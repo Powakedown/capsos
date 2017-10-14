@@ -1,0 +1,16 @@
+<%= simple_form_for :names, url: case_end_path do |f| %>
+<div class="wrapper-mobile flex-horizontal" id="page6">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div>
+      <p>Nom et prénom de la victime:</p>
+      <%= f.input :name, label: false, class:"btn btn-inverse with-border" %>
+      <p>Âge de la victime:</p>
+      <%= f.input :age, label: false, class:"btn btn-inverse with-border" %>
+      <p>À quel n° vous rappeler</p>
+      <%= f.input :phone, label: false, class:"btn btn-inverse with-border" %>
+      <p class="margin-bottom-small">J’autorise l’envoi des réponses au centre antipoison de Bordeaux</p>
+      <%= f.submit "OUI, ENVOYER", class:"btn btn-pink" %>
+    </div>
+  </div>
+</div>
+<% end %>
