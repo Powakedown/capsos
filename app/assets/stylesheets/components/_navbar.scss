@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  width: calc(100% - 20px);
 }
 
 /* Logo */
@@ -26,7 +28,10 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: right;
+  img {
+    margin-right: 15px;
+  }
 }
 
 /* Basic navbar item */
