@@ -18,7 +18,7 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 body {
   font-family: $body-font;
   color: $dark-gray;
-  background-color: $light-gray;
+  background-color: white;
 }
 h1 {
   font-size: 36px;
@@ -55,4 +55,13 @@ a {
   .fa{
     color: $dark-gray !important;
   }
+}
+.pink {
+  color: $pink;
+}
+.blue {
+  color: $blue;
+}
+.fa {
+  margin-right: 5px;
 }

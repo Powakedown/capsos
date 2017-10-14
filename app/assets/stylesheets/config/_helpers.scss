@@ -9,8 +9,15 @@ $white-space: 20px;
 .wrapper {
   width: 350px;
 }
+
+.fullscreen-wrapper {
+  width:310px;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
 .fullscreen-wrapper-under-navbar {
-  background-color: #F6F6F8;
   width:310px;
   height: calc(100vh - 70px);
   background-size: cover;
@@ -18,7 +25,7 @@ $white-space: 20px;
   background-attachment: fixed;
 }
 .wrapper-mobile.flex-horizontal {
-  width: 350px;
+  width: 100%;
 }
 .margin-bottom-medium {
   margin-bottom: 40px !important;
