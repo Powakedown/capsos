@@ -18,5 +18,8 @@ select#case_age_type {
   font-size: 24px;
 }
 input#case_phone {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+input[type="checkbox"] {
+  width: 40px;
 }
