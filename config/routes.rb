@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   get '/add_names', to: 'cases#add_names'
   get '/case_end', to: 'cases#case_end'
+  get '/google', to: 'pages#google'
+  get '/captv', to: 'pages#captv'
+  get '/phone', to: 'pages#phone'
 end

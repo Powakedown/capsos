@@ -5,4 +5,10 @@ class PagesController < ApplicationController
   def add_photo
 
   end
+
+  def google
+
+  end
+
+
 end

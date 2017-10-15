@@ -1,0 +1,13 @@
+<%= link_to "" do %>
+  <div class="screen">
+    <%= image_tag "screen2", class: "screen" %>
+  </div>
+<% end %>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+        $('.navbar-wagon').hide();
+    });
+  <% end %>
+<% end %>
