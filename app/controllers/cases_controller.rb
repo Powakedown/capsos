@@ -4,9 +4,11 @@ class CasesController < ApplicationController
 
   def create
     @case = Case.new
-    @photo = params[:case][:photo]
-    @photo = JSON.parse(@photo)[0][:secure_url]
-    redirect_to add_names_path
+    if params[:case][:photo] && params[:case][:photo] != ""
+      @photo = params[:case][:photo]
+      @photo = JSON.parse(@photo)[0][:secure_url]
+    end
+    redirect_to case_end_path
   end
 
   def show
@@ -20,6 +22,5 @@ class CasesController < ApplicationController
   end
 
   def case_end
-
   end
 end

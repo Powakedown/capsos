@@ -27,7 +27,7 @@
 </div>
 </div>
 
-<%= simple_form_for Case.new, url: cases_path, method: :post do |f| %>
+<%= simple_form_for Case.new do |f| %>
 
 <div class="wrapper-mobile flex-horizontal" id="page2">
   <div class="fullscreen-wrapper flex-vertical flex-column text-center">
@@ -140,11 +140,16 @@ avant d’appeler.</p>
     <div>
       <h1 class="margin-bottom">Prendre une </br>photo :</h1>
       <p class="margin-bottom-medium">recto/verso du flacon</p>
-      <%= f.input :photo, as: :attachinary, label: false, class:"btn btn-pink flexbox center" %>
+
+      <label class="text-center fileUpload">
+         <span class="upload btn btn-pink"><i class="fa fa-camera"></i></span>
+         <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
+      </label>
+
       <%#= f.submit "suivant", class:"btn btn-pink flexbox center" %>
       <%= link_to "Suivant", "#page7", class: "btn btn-pink flexbox center scroll" %>
     </div>
-      <%= link_to "Pas de photo", "#page7", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Pas de photo", "#page7", class:"btn btn-gray flexbox center scroll" %>
     <%= render "shared/samu_call" %>
 
   </div>
@@ -153,7 +158,8 @@ avant d’appeler.</p>
 <div class="wrapper-mobile flex-horizontal" id="page7">
   <div class="fullscreen-wrapper flex-vertical flex-column text-center">
     <div>
-      <p>Nom et prénom de la victime:</p>
+      <h1>Dernière étape:</h1>
+      <p>Prénom/Nom de la victime:</p>
       <%= f.input :name, label: false, class:"btn btn-inverse with-border" %>
       <p>Âge de la victime:</p>
       <div class="form-split">
@@ -163,22 +169,10 @@ avant d’appeler.</p>
         <%= f.input :age_type, label: false, collection: ["ans", "mois"], selected: "ans", class:"btn btn-inverse with-border" %>
       </div>
       <p>À quel n° vous rappeler</p>
-      <%= f.input :phone, label: false, class:"btn btn-inverse with-border margin-bottom-medium" %>
-      <h6 class="margin-bottom-small">J’autorise l’envoi des réponses au centre antipoison de Bordeaux</h6>
-      <%= link_to "OUI, ENVOYER", "#page8", class:"btn btn-pink flexbox center scroll" %>
-      <%#= f.submit "OUI, ENVOYER", class:"btn btn-pink" %>
-    </div>
-  </div>
-</div>
-
-<div class="wrapper-mobile flex-horizontal" id="page8">
-  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
-    <div>
-      <p class="margin-bottom-medium">Merci ! Vos informations ont été transmises.</p>
-      <h1 class="margin-bottom-medium">À présent, appeler le centre antipoison</h1>
-      <div>
-        <%= link_to "05 56 96 40 80", "tel://0556964080", class:"btn btn-pink flexbox center" %>
-      </div>
+      <%= f.input :phone, label: false, class:"btn btn-inverse with-border margin-bottom-small" %>
+      <h6 class="margin-bottom-small">Autorisez-vous la transmission des données au centre antipoison de Bordeaux ?</h6>
+      <%= f.input_field :data_transmission, as: :boolean, required: :true %>
+      <%= f.submit "OUI, ENVOYER", class:"btn btn-pink flexbox center" %>
     </div>
   </div>
 </div>
