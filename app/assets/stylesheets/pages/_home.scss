@@ -27,3 +27,7 @@ input[type="checkbox"] {
   width: 100%;
   height: 100vh;
 }
+.fix-for-ie {
+  display: block;
+  width: 325px;
+}
