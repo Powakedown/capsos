@@ -1,5 +1,6 @@
 <div class="wrapper-mobile flex-horizontal">
   <div class="fullscreen-wrapper-under-navbar flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
     <div>
       <div><p>Si le patient ne respire pas ou n’est pas conscient</p></div>
       <%= link_to "Appeler le SAMU (15)", "tel://15", class: "btn btn-blue flexbox center" %>
@@ -8,12 +9,13 @@
       <div><p>Sinon :</p></div>
       <%= link_to "CENTRE ANTIPOISON", "#page1", class:"btn btn-pink flexbox center scroll" %>
     </div>
+    </div>
   </div>
 </div>
 
 <div class="wrapper-mobile flex-horizontal" id="page1">
   <div class="fullscreen-wrapper flex-vertical flex-column text-center">
-    <div class="padding-box text-left">
+    <div class="fix-for-ie padding-box text-left">
       <div><p><i class="fa fa-minus-circle pink margin-bottom-medium"></i> Ne pas faire boire</p></div>
       <div><p><i class="fa fa-minus-circle pink margin-bottom-medium"></i> Ne pas faire vomir</p></div>
       <div><p class="pink margin-bottom-small">Selon les cas :</p></div>
