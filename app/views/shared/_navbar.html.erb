@@ -1,11 +1,19 @@
-<div class="navbar-wagon" id="page0">
-  <%= link_to root_path, class: "navbar-wagon-brand logo-center-top", id:"logo" do %>
+<div class=" hidden-xs hidden-sm navbar-wagon" id="page0">
+  <%= link_to root_path, class: "navbar-wagon-brand", id:"logo" do %>
     <%= image_tag "capsos_logo.png" %>
   <% end %>
 
   <div class="navbar-wagon-right">
-    <%= image_tag "flag_britain.png" %>
+    <div class="pastille" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1508239020/capsos/gb.svg')"></div>
     <%= link_to(content_tag(:i, nil, class: 'fa fa-info-circle'), "")%>
   </div>
 </div>
 
+
+<div class="navbar-wagon navbar-slim hidden-md hidden-lg" id="page0">
+  <%= link_to(content_tag(:i, nil, class: 'fa fa-arrow-left'), root_path)%>
+  <%= link_to root_path, id:"logo" do %>
+    <%= image_tag "capsos_logo.png" %>
+  <% end %>
+  <div class="pastille" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1508239020/capsos/gb.svg')"></div>
+</div>

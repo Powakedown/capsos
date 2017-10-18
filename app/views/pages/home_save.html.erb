@@ -1,0 +1,148 @@
+<%= simple_form_for Case.new do |f| %>
+
+<div class="wrapper-mobile flex-horizontal" id="page2">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <iframe width="320" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=hotel%20de%20r%C3%A9gion%20de%20nouvelle%20aquitaine&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe>
+    <div>
+      <p>Vous êtes ici?</p>
+      <%= link_to "OUI", "#page3", class:"btn btn-pink flexbox center scroll" %>
+    </div>
+    <div>
+      <p>Non, liste des :</p>
+      <%= link_to "CENTRES ANTIPOISON", "#page3bis", class:"btn btn-pink flexbox center scroll" %>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-mobile flex-horizontal" id="page3bis">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1 class="margin-bottom-medium">Choisissez le centre le plus proche :</h1>
+      <%= link_to "Angers", "#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Bordeaux", "#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Lille","#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Lyon","#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Marseille", "#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Nancy","#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Paris","#page3", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Toulouse","#page3", class:"btn btn-pink flexbox center scroll" %>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper-mobile flex-horizontal" id="page3">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1 class="margin-bottom-medium">Gagnez du temps</h1>
+      <p class="margin-bottom-medium">Aidez-nous en répondant aux 3 questions suivantes
+avant d’appeler.</p>
+      <%= link_to "OK", "#page4", class:"btn btn-pink flexbox center scroll" %>
+    </div>
+    <div>
+      <p>OU</p>
+    </div>
+    <div>
+      <h6>Appelez le centre antipoison de Bordeaux</h6>
+      <%= render "shared/samu_call" %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrapper-mobile flex-horizontal" id="page4">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1 class="margin-bottom-medium">Produit en cause :</h1>
+      <%= link_to "Médicament", "#page5", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Produit ménager", "#page5", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Plante", "#page5", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Champignon", "#page5", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Produit professionnel", "#page5", class:"btn btn-pink flexbox center scroll" %>
+      <%= link_to "Autre ou je ne sais pas", "#page5", class:"btn btn-pink flexbox center scroll" %>
+    </div>
+    <%= render "shared/samu_call" %>
+  </div>
+</div>
+
+<div class="wrapper-mobile flex-horizontal" id="page5">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1 class="margin-bottom-medium">Par quelle voie :</h1>
+      <%= link_to "#page6" do %>
+        <div class="btn btn-inverse with-border scroll">
+          <%= image_tag "http://res.cloudinary.com/doodlid/image/upload/v1507990114/capsos/btn_eye.png" %>
+        </div>
+      <% end %>
+      <%= link_to "#page6" do %>
+        <div class="btn btn-inverse with-border scroll">
+          <%= image_tag "http://res.cloudinary.com/doodlid/image/upload/v1507990134/capsos/btn_nose.png" %>
+        </div>
+      <% end %>
+      <%= link_to "#page6" do %>
+        <div class="btn btn-inverse with-border scroll">
+          <%= image_tag "http://res.cloudinary.com/doodlid/image/upload/v1507990134/capsos/btn_mouth.png" %>
+        </div>
+      <% end %>
+      <%= link_to "#page6" do %>
+        <div class="btn btn-inverse with-border scroll">
+          <%= image_tag "http://res.cloudinary.com/doodlid/image/upload/v1507990134/capsos/btn_hand.png" %>
+        </div>
+      <% end %>
+      <%= link_to "#page6" do %>
+        <div class="btn flexbox btn-inverse with-border scroll">
+          <p>Plusieurs</p>
+        </div>
+      <% end %>
+      <%= link_to "#page6" do %>
+        <div class="btn flexbox btn-inverse with-border scroll">
+          <p>Autre</p>
+        </div>
+      <% end %>
+    </div>
+    <%= render "shared/samu_call" %>
+  </div>
+</div>
+
+<div class="wrapper-mobile flex-horizontal" id="page6">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1 class="margin-bottom">Prendre une </br>photo :</h1>
+      <p class="margin-bottom-medium">recto/verso du flacon</p>
+
+      <label class="text-center fileUpload">
+         <span class="upload btn btn-pink"><i class="fa fa-camera"></i></span>
+         <%= f.input :photo, as: :attachinary, label: false, class: "upload" %>
+      </label>
+
+      <%#= f.submit "suivant", class:"btn btn-pink flexbox center" %>
+      <%= link_to "Suivant", "#page7", class: "btn btn-pink flexbox center scroll" %>
+    </div>
+      <%= link_to "Pas de photo", "#page7", class:"btn btn-gray flexbox center scroll" %>
+    <%= render "shared/samu_call" %>
+  </div>
+</div>
+
+<div class="wrapper-mobile flex-horizontal" id="page7">
+  <div class="fullscreen-wrapper flex-vertical flex-column text-center">
+    <div class="fix-for-ie">
+      <h1>Dernière étape:</h1>
+      <p>Prénom/Nom de la victime:</p>
+      <%= f.input :name, label: false, class:"btn btn-inverse with-border" %>
+      <p>Âge de la victime:</p>
+      <div class="form-split">
+        <%= f.input :age, label: false, class:"btn btn-inverse with-border" %>
+      </div>
+      <div class="form-split">
+        <%= f.input :age_type, label: false, collection: ["ans", "mois"], selected: "ans", class:"btn btn-inverse with-border" %>
+      </div>
+      <p>À quel n ° vous rappeler</p>
+      <%= f.input :phone, label: false, class:"btn btn-inverse with-border margin-bottom-small" %>
+      <h6 class="margin-bottom-small">Autorisez-vous la transmission des données au centre antipoison de Bordeaux ?</h6>
+      <%= f.input_field :data_transmission, as: :boolean, required: :true %>
+      <%= f.submit "OUI, ENVOYER", class:"btn btn-pink flexbox center" %>
+    </div>
+  </div>
+</div>
+
+<% end %>

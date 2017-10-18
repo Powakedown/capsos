@@ -45,15 +45,17 @@ h6 {
   font-size: 18px;
   font-weight: 500;
 }
-p, form, input, i{
+p, form, input {
   font-family: $body-font;
   font-size: 24px !important;
   line-height: 1.5;
-  margin: 0px;
+  i {
+    margin-right: 5px;
+  }
 }
 a {
   .fa{
-    color: $dark-gray !important;
+    color: $dark-gray;
   }
 }
 .pink {
@@ -61,7 +63,4 @@ a {
 }
 .blue {
   color: $blue;
-}
-.fa {
-  margin-right: 5px;
 }
