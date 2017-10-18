@@ -1,16 +1,22 @@
 <%= render "shared/navbar" %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="fullscreen under-navbar flex-vertical flex-column text-center">
-        <iframe width="320" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=hotel%20de%20r%C3%A9gion%20de%20nouvelle%20aquitaine&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe>
-        <div>
-          <p><%= t('geoloc.here') %></p>
-          <%= link_to t('common.text_yes'), "#page3", class:"btn btn-pink flexbox" %>
-        </div>
-        <div>
-          <p>Non, liste des :</p>
-          <%= link_to t('home.cap_btn'), "#page3bis", class:"btn btn-pink flexbox" %>
+<div class="fullscreen under-navbar">
+  <div class="map-container">
+    <%= render "shared/map" %>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="flex-vertical flex-column text-center">
+          <div class="row">
+            <div class="col-xs-12 margin-bottom-small">
+              <p><%= t('geoloc.here') %></p>
+              <%= link_to t('common.text_yes'), "#page3", class:"btn btn-pink flexbox" %>
+            </div>
+            <div class="col-xs-12">
+              <p>Non, liste des :</p>
+              <%= link_to t('home.cap_btn'), "#page3bis", class:"btn btn-gray flexbox" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

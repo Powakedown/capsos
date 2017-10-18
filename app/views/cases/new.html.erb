@@ -16,3 +16,11 @@
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $('document').ready(function(){
+      sessionStorage["screen_width"] = $('body').width();
+    })
+  </script>
+<% end %>

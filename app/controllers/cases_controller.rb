@@ -1,6 +1,7 @@
 class CasesController < ApplicationController
   def new
     session[:case] = Case.new
+    @screen_width = session[:screen_width]
   end
 
   def create
@@ -20,6 +21,10 @@ class CasesController < ApplicationController
 
   def geoloc
     #catch number of people reaching this step
+    @address = "68 rue marcel sembat, 33130 Bègles"
+    housing = {:latitude => 44.818006, longitude: -0.5434985, address: "68 rue marcel sembat, 33130 Bègles"}
+
+
   end
 
   def add_names
