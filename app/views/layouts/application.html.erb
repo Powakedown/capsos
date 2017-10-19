@@ -9,9 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-      <%= yield %>
-      <%= javascript_include_tag 'application' %>
-      <%= cloudinary_js_config %>
+    <%= render "shared/navbar" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+          <div class="fullscreen under-navbar-slim flex-column text-center">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
   </body>
 </html>

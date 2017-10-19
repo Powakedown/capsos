@@ -1,26 +1,22 @@
-<%= render "shared/navbar" %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="fullscreen under-navbar-slim flex-column text-center">
-        <div class="text-left">
-          <p><i class="fa fa-minus-circle pink "></i><%= t('info.dont1') %></p>
-          <p><i class="fa fa-minus-circle pink "></i><%= t('info.dont2') %></p>
-          <p class="pink "><%= t('info.case') %></p>
-          <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do1') %></p>
-          <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do2') %></p>
-          <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do3') %></p>
-        </div>
-          <%= link_to t('info.btn'), geoloc_path, class:"btn btn-pink flexbox" %>
-      </div>
-    </div>
-  </div>
+<div class="text-left">
+  <p><i class="fa fa-minus-circle pink "></i><%= t('info.dont1') %></p>
+  <p><i class="fa fa-minus-circle pink "></i><%= t('info.dont2') %></p>
+  <p class="pink"><%= t('info.case') %></p>
+  <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do1') %></p>
+  <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do2') %></p>
+  <p class=""><i class="fa fa-check-circle blue"></i><%= t('info.do3') %></p>
 </div>
+  <%= simple_form_for :gui, url: geoloc_path, method: :get do |f| %>
+    <%= f.input :screen_width, as: :hidden, input_html: { value: 'default' } %>
+    <%= f.button :submit, value: t('common.btn_next'), class: "btn btn-pink flexbox" %>
+  <% end %>
+
+
 
 <% content_for(:after_js) do %>
   <script type="text/javascript">
     $('document').ready(function(){
-      sessionStorage["screen_width"] = $('body').width();
+      document.getElementById('gui_screen_width').value = $('.fullscreen').width();
     })
   </script>
 <% end %>

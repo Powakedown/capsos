@@ -1,2 +1,5 @@
 <h1>Cases#show</h1>
 <p>Find me in app/views/cases/show.html.erb</p>
+<%= @case.agent %>
+<%= @case.way %>
+  <%= cl_image_tag @case.photo.path, width: 300, height: 200, crop: :fill %>

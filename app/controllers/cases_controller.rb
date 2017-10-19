@@ -1,36 +1,79 @@
 class CasesController < ApplicationController
-  def new
-    session[:case] = Case.new
-    @screen_width = session[:screen_width]
-  end
+  before_action :session_case, only: [:create, :show, :update_way, :update_agent, :edit_photo, :update_photo]
 
-  def create
-    @case = session[:case]
-    if params[:case][:photo] && params[:case][:photo] != ""
-      @photo = params[:case][:photo]
-      @photo = JSON.parse(@photo)[0][:secure_url]
-    end
-    redirect_to case_end_path
+  def new
+    @case = Case.new
+    @case.save!
+    session[:case_id] = @case.id
+    @screen_width = session[:screen_width]
   end
 
   def show
     #recup des names, age, phone
     #envoie des données
-
   end
 
   def geoloc
     #catch number of people reaching this step
     @address = "68 rue marcel sembat, 33130 Bègles"
     housing = {:latitude => 44.818006, longitude: -0.5434985, address: "68 rue marcel sembat, 33130 Bègles"}
+    @screen_width = params[:gui][:screen_width]
+  end
 
+  def time_win
+    #capter l'adresse
+    #capter le nombre de gens qui arrive là vs le nombre qui ont commencé
 
   end
 
-  def add_names
+  def edit_agent
 
   end
+
+  def update_agent
+    @agent = params[:commit]
+    @case.agent = @agent
+    @case.save!
+    redirect_to edit_way_path
+  end
+
+  def edit_way
+
+  end
+
+  def update_way
+    @agent = params[:commit]
+    @case.way = @agent
+    @case.save!
+    redirect_to edit_photo_path
+  end
+
+  def edit_photo
+
+  end
+
+  def update_photo
+    if params[:case][:photo] && params[:case][:photo] != ""
+      @photo = params[:case][:photo]
+      @photo = JSON.parse(@photo[1])[0]["secure_url"]
+      @case.photourl = @photo
+      @case.save!
+    end
+    redirect_to case_path
+  end
+
 
   def case_end
   end
+
+  private
+
+  def session_case
+    @case = Case.find(session[:case_id])
+  end
+
+  def product_params
+    params.require(:case).permit(:name, :phone, :photo)
+  end
+
 end

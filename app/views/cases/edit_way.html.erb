@@ -1,0 +1,28 @@
+<div>
+  <p><%= t('edit_way.title') %></p>
+  <%= simple_form_for :ways, url: update_way_path, method: :get do |f| %>
+    <% t('edit_way.ways.pictures').each do |key, value| %>
+      <label class="full-width text-center relative">
+        <span class="btn btn-inverse with-border"><%= image_tag "#{value}" %></span>
+        <%= f.button :submit, class: "submit-hidden", value: key, as: :hidden %>
+      </label>
+    <% end %>
+
+    <label class="full-width text-center relative">
+      <span class="btn btn-inverse with-border"><%= image_tag t('edit_way.ways.words.skin.picture') %> <%= t('edit_way.ways.words.skin.text')  %></span>
+      <%= f.button :submit, class: "submit-hidden", value: t('edit_way.ways.words.skin.text')  %>
+    </label>
+
+    <label class="full-width text-center relative">
+      <span class="btn btn-inverse with-border flexbox"><%= t('edit_way.ways.words.many')  %></span>
+      <%= f.button :submit, class: "submit-hidden", value: t('edit_way.ways.words.many') %>
+    </label>
+
+    <label class="full-width text-center relative">
+      <span class="btn btn-inverse with-border flexbox"><%= t('edit_way.ways.words.other')  %></span>
+      <%= f.button :submit, class: "submit-hidden", value: t('edit_way.ways.words.other') %>
+    </label>
+
+  <% end %>
+</div>
+<%= render "shared/samu_call" %>

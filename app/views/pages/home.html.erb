@@ -1,18 +1,9 @@
-<%= render "shared/navbar" %>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="fullscreen under-navbar flex-column text-center">
-        <div>
-          <p><%= t('home.samu') %></p>
-          <%= link_to t('home.samu_btn'), "tel://15", class: "btn btn-blue flexbox" %>
-        </div>
-        <div>
-          <p><%= t('home.cap') %></p>
-          <%= link_to t('home.cap_btn'), new_case_path, class:"btn btn-pink flexbox" %>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div>
+  <p><%= t('home.samu') %></p>
+  <%= link_to t('home.samu_btn'), "tel://15", class: "btn btn-blue flexbox" %>
+</div>
+<div>
+  <p><%= t('home.cap') %></p>
+  <%= link_to t('home.cap_btn'), new_case_path, class:"btn btn-pink flexbox" %>
+</div>
 </div>

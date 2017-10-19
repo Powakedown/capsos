@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015093530) do
+ActiveRecord::Schema.define(version: 20171019143716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20171015093530) do
     t.integer "age"
     t.integer "phone"
     t.boolean "data_transmission"
+    t.string "agent"
+    t.string "way"
+    t.string "photo"
+    t.string "photourl"
   end
 
 end

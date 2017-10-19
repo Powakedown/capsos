@@ -1,24 +1,13 @@
-<%= render "shared/navbar" %>
-<div class="fullscreen under-navbar">
+<div class="text-center">
   <div class="map-container">
     <%= render "shared/map" %>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="flex-vertical flex-column text-center">
-          <div class="row">
-            <div class="col-xs-12 margin-bottom-small">
-              <p><%= t('geoloc.here') %></p>
-              <%= link_to t('common.text_yes'), "#page3", class:"btn btn-pink flexbox" %>
-            </div>
-            <div class="col-xs-12">
-              <p>Non, liste des :</p>
-              <%= link_to t('home.cap_btn'), "#page3bis", class:"btn btn-gray flexbox" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+<div class="flex-vertical flex-column text-center">
+  <p><%= t('geoloc.here') %></p>
+  <%= link_to t('common.text_yes'), time_win_path, class:"btn btn-pink flexbox margin-bottom-small" %>
+  <p>Non, liste des :</p>
+  <%= link_to t('home.cap_btn'), "#page3bis", class:"btn btn-gray flexbox" %>
+</div>
+
+
