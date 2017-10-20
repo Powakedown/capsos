@@ -51,6 +51,16 @@ fr:
     subtitle:
       produit_menager: "Recto/Verso"
     nophoto: "Pas de photo"
+  edit_case:
+    title: "Dernière étape"
+    field1: "Prénom/Nom de la victime"
+    field2: "Âge de la victime"
+    field3: "À quel n° vous rappeler"
+    authorize: "Autorisez la transmission des données au centre antipoison de Bordeaux."
+    send: "envoyer"
+  case_end:
+    thankyou: "Merci ! Vos informations ont été transmises."
+    advice: "À présent, appeler le centre antipoison"
   numbers:
     angers:
     bordeaux: "05 56 96 40 80"

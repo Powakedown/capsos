@@ -1,5 +1,5 @@
 class CasesController < ApplicationController
-  before_action :session_case, only: [:create, :show, :update_way, :update_agent, :edit_photo, :update_photo]
+  before_action :session_case, only: [:create, :show, :edit, :update, :update_way, :update_agent, :edit_photo, :update_photo]
 
   def new
     @case = Case.new
@@ -42,8 +42,8 @@ class CasesController < ApplicationController
   end
 
   def update_way
-    @agent = params[:commit]
-    @case.way = @agent
+    @way = params[:commit]
+    @case.way = @way
     @case.save!
     redirect_to edit_photo_path
   end
@@ -53,15 +53,19 @@ class CasesController < ApplicationController
   end
 
   def update_photo
-    if params[:case][:photo] && params[:case][:photo] != ""
+    if params[:case][:photo] && params[:case][:photo][1] != ""
       @photo = params[:case][:photo]
       @photo = JSON.parse(@photo[1])[0]["secure_url"]
       @case.photourl = @photo
       @case.save!
     end
-    redirect_to case_path
+    redirect_to edit_case_path(@case)
   end
 
+  def update
+    @case.update(case_params)
+    redirect_to case_end_path
+  end
 
   def case_end
   end
@@ -72,8 +76,8 @@ class CasesController < ApplicationController
     @case = Case.find(session[:case_id])
   end
 
-  def product_params
-    params.require(:case).permit(:name, :phone, :photo)
+  def case_params
+    params.require(:case).permit(:name, :age, :age_type, :phone, :photo)
   end
 
 end

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'edit_way', to: 'cases#edit_way'
   get 'edit_photo', to: 'cases#edit_photo'
   get 'update_photo', to: 'cases#update_photo'
+  get 'case_end', to: 'cases#case_end'
 
   root to: 'pages#home'
 

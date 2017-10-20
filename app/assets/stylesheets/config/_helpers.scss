@@ -118,7 +118,7 @@ input, select {
   background-position: center center;
   background-attachment: fixed;
 }
-//SPLITSCREEN
+//SPLITS
 .splitscreen-wrapper{
   position: relative;
   width: 100%;
@@ -139,6 +139,11 @@ input, select {
   color: $dark-gray;
   margin-left: -136px;
 }
+.half-split {
+  width: 50%;
+  float: left;
+}
+//TEST
 .test-red {
   background-color: red;
 }
@@ -156,10 +161,23 @@ input, select {
     position: absolute;
     right: 26px;
     top: 26px;
-    line-style-type: none;
+    list-style-type: none;
     img {
       width: 100px;
       height: 100px;
+    }
+    a {
+      position: absolute;
+      right: -19px;
+      top: -24px;
+      background-color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
     }
   }
   input {
@@ -183,12 +201,9 @@ input, select {
   top: 50%;
   margin-top: -14px;
 }
-.attachinary_container {
-  z-index: 100;
+// FORM
+input[type="checkbox"] {
+  width: 40px;
 }
-.form-for {
-  width: 50%;
-}
-
 
 

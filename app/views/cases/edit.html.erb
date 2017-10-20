@@ -1,0 +1,25 @@
+<div>
+  <h1><%= t('edit_case.title') %></h1>
+  <%= simple_form_for @case, url: case_path(@case), method: :patch do |f| %>
+    <h6><%= t('edit_case.field1') %></h6>
+    <%= f.input :name, label: false, class: "btn btn-inverse" %>
+    <h6><%= t('edit_case.field2') %></h6>
+    <div class="half-split">
+      <%= f.input :age, label: false, class:"btn btn-inverse with-border" %>
+    </div>
+    <div class="half-split">
+      <%= f.input :age_type, label: false, collection: ["ans", "mois"], selected: "ans", class:"btn btn-inverse with-border" %>
+    </div>
+    <h6><%= t('edit_case.field3') %></h6>
+    <%= f.input :phone, label: false, class: "btn btn-inverse" %>
+    <div class="row">
+      <div class="col-xs-2">
+        <%= f.input_field :data_transmission, as: :boolean, required: :true %>
+      </div>
+      <div class="col-xs-10">
+        <h6 class="text-left"><%= t('edit_case.authorize') %></h6>
+      </div>
+    </div>
+    <%= f.button :submit, value: t('edit_case.send'), class: "btn btn-pink flexbox margin-bottom-small" %>
+  <% end %>
+</div>

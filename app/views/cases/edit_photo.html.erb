@@ -6,8 +6,9 @@
        <%= f.input :photo, as: :attachinary, label: false %>
     </label>
       <%= f.button :submit, value: t('common.btn_next'), class: "btn btn-pink flexbox margin-bottom-small" %>
-      <%= f.button :submit, value: t('edit_photo.nophoto'), class: "btn btn-pink flexbox margin-bottom-small" %>
   <% end %>
+  <%= link_to t('edit_photo.nophoto'), edit_case_path(@case), class: "btn btn-pink flexbox margin-bottom-small" %>
+
 
 </div>
 <%= render "shared/samu_call" %>
