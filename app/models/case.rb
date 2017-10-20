@@ -1,3 +1,3 @@
 class Case < ApplicationRecord
-  has_attachments :photo
+  has_attachment :photo
 end

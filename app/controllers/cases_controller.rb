@@ -53,17 +53,12 @@ class CasesController < ApplicationController
   end
 
   def update_photo
-    if params[:case][:photo] && params[:case][:photo][1] != ""
-      @photo = params[:case][:photo]
-      @photo = JSON.parse(@photo[1])[0]["secure_url"]
-      @case.photourl = @photo
-      @case.save!
-    end
+    @case.update(params_case)
     redirect_to edit_case_path(@case)
   end
 
   def update
-    @case.update(case_params)
+    @case.update(params_case)
     redirect_to case_end_path
   end
 
@@ -76,8 +71,8 @@ class CasesController < ApplicationController
     @case = Case.find(session[:case_id])
   end
 
-  def case_params
-    params.require(:case).permit(:name, :age, :age_type, :phone, :photo)
+  def params_case
+    params.require(:case).permit(:name, :age, :age_type, :phone, :photo_cache, :photo)
   end
 
 end
