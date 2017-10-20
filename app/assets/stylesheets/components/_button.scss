@@ -3,16 +3,14 @@
   background-color: $pink;
   border-radius: $border-radius;
   height: 56px;
-  min-width: 280px;
   border: none;
   padding: 0px 30px 0px 30px;
-  max-width: 320px;
-  min-width: 300px;
+  width: 100%;
+  min-width: 200px;
   box-shadow: none;
   font-size: 24px !important;
   -webkit-box-shadow: none !important;
   border-bottom:none;
-  margin: 5px;
   p {
     margin-bottom: 0px;
   }
@@ -34,7 +32,7 @@
   }
 }
 .with-border {
-  border: 1px solid $dark-gray;
+  border: 1px solid $dark-gray !important;
 }
 input {
   &:focus {
@@ -57,11 +55,8 @@ input {
   background-color: $yellow;
 }
 .btn-inverse {
-  color: $dark-gray;
-  background-color: transparent;
-}
-.form-group.attachinary.optional.case_photo {
-  width: 320px;
+  color: $dark-gray !important;
+  background-color: transparent !important;
 }
 input#case_photo {
   color: white;
@@ -88,4 +83,10 @@ input#case_photo {
   a {
     color: white;
   }
+}
+.submit-hidden {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  visibility: hidden;
 }

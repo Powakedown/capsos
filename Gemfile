@@ -18,10 +18,13 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'json'
 
+
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem "geocoder"
+gem "gmaps4rails"
 
 group :development, :test do
   gem 'pry-byebug'

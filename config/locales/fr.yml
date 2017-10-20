@@ -1,0 +1,68 @@
+fr:
+  common:
+    text_yes: "OUI"
+    btn_next: "SUIVANT"
+    or: "OU"
+    ok: "OK"
+  home:
+    samu: "Si le patient ne respire pas ou n’est pas conscient"
+    samu_btn: "Appelez le SAMU(15)"
+    cap: "Sinon"
+    cap_btn: "Centres antipoison"
+  info:
+    dont1: "Ne pas faire boire"
+    dont2: "Na pas faire vomir"
+    case: "Selon les cas"
+    do1: "Rincer tout de suite et abondamment à l’eau si les yeux ou la peau sont touchés."
+    do2: "Nettoyer la bouche."
+    do3: "Aérer la pièce."
+    btn: "SUIVANT"
+  geoloc:
+    here: "Vous êtes ici?"
+    alt: "Carte google qui affiche votre position"
+  time_win:
+    title: "Gagnez du temps"
+    subtitle: "En répondant à 3 questions avant d’appeler."
+    btn_legend: "Appelez le centre antipoison de Bordeaux"
+  edit_agent:
+    title: "Produit en cause?"
+    agents:
+      medicament: "Médicament"
+      produit_menager: "Produit ménager"
+      champignon: "Champignon"
+      plante: "Plante"
+      produit_professionnel: "Produit professionnel"
+      autre_ou_ne_sais_pas: "Autre ou je ne sais pas"
+  edit_way:
+    title: "Par quelle voie?"
+    ways:
+      pictures:
+        yeux: "http://res.cloudinary.com/doodlid/image/upload/v1508409144/capsos/btn_eye.png"
+        nez: "http://res.cloudinary.com/doodlid/image/upload/v1508409144/capsos/btn_nose.png"
+        bouche: "http://res.cloudinary.com/doodlid/image/upload/v1508409144/capsos/btn_mouth.png"
+      words:
+        skin:
+          picture: "http://res.cloudinary.com/doodlid/image/upload/v1508409134/capsos/btn_hand.jpg"
+          text: "Peau"
+        many: "Plusieurs"
+        other: "Autre ou je ne sais pas"
+  edit_photo:
+    title: "Prendre une photo"
+    subtitle:
+      produit_menager: "Recto/Verso"
+    nophoto: "Pas de photo"
+  edit_case:
+    title: "Dernière étape"
+    field1: "Prénom/Nom de la victime"
+    field2: "Âge de la victime"
+    field3: "À quel n° vous rappeler"
+    authorize: "Autorisez la transmission des données au centre antipoison de Bordeaux."
+    send: "envoyer"
+  case_end:
+    thankyou: "Merci ! Vos informations ont été transmises."
+    advice: "À présent, appeler le centre antipoison"
+  numbers:
+    angers:
+    bordeaux: "05 56 96 40 80"
+
+

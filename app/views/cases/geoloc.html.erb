@@ -1,0 +1,13 @@
+<div class="text-center">
+  <div class="map-container">
+    <%= render "shared/map" %>
+  </div>
+</div>
+<div class="flex-vertical flex-column text-center">
+  <p><%= t('geoloc.here') %></p>
+  <%= link_to t('common.text_yes'), time_win_path, class:"btn btn-pink flexbox margin-bottom-small" %>
+  <p>Non, liste des :</p>
+  <%= link_to t('home.cap_btn'), "#page3bis", class:"btn btn-gray flexbox" %>
+</div>
+
+

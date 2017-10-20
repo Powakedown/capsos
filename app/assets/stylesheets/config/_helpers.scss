@@ -5,29 +5,26 @@ $border-radius: 13px;
 $border-color: $medium-gray;
 $padding-side: 0 20px 0 20px;
 $white-space: 20px;
+$input-height: 56px !important;
 
 .wrapper {
   width: 350px;
 }
-
-.fullscreen-wrapper {
-  width:310px;
+.relative {
+  position: relative;
+}
+.fullscreen {
+  width:100%;
   height: 100vh;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
-.fullscreen-wrapper-under-navbar {
-  width:310px;
+.under-navbar {
   height: calc(100vh - 70px);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
 }
-.wrapper-mobile.flex-horizontal {
-  width: 100%;
-  border: 1px solid $dark-gray;
-
+.under-navbar-slim {
+  height: calc(100vh - 45px);
 }
 .margin-bottom-medium {
   margin-bottom: 40px !important;
@@ -36,7 +33,8 @@ $white-space: 20px;
   margin-bottom: 10px !important;
 }
 .center {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .border-light {
   border: $border-light;
@@ -57,9 +55,6 @@ $white-space: 20px;
   display: flex !important;
   justify-content: center;
   align-items: center;
-}
-.img-margin-right {
-  margin-right: 15px;
 }
 .flex-horizontal {
   display: flex;
@@ -96,12 +91,15 @@ $white-space: 20px;
 .min-width {
   min-width: 200px;
 }
+.full-width {
+  width: 100%;
+}
 //CONFIG
 a:hover {
   text-decoration: none !important;
 }
 input, select {
-  height: 56px !important;
+  height: $input-height;
 }
 .checkbox input[type="checkbox"] {
   top: -20px;
@@ -120,7 +118,7 @@ input, select {
   background-position: center center;
   background-attachment: fixed;
 }
-//SPLITSCREEN
+//SPLITS
 .splitscreen-wrapper{
   position: relative;
   width: 100%;
@@ -141,3 +139,71 @@ input, select {
   color: $dark-gray;
   margin-left: -136px;
 }
+.half-split {
+  width: 50%;
+  float: left;
+}
+//TEST
+.test-red {
+  background-color: red;
+}
+//FILE UPLOAD
+.fileUpload {
+    position: relative;
+    background-color: $light-gray;
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  ul {
+    position: absolute;
+    right: 26px;
+    top: 26px;
+    list-style-type: none;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    a {
+      position: absolute;
+      right: -19px;
+      top: -24px;
+      background-color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+  }
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+.upload {
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  top: 50%;
+  margin-top: -14px;
+}
+// FORM
+input[type="checkbox"] {
+  width: 40px;
+}
+
+

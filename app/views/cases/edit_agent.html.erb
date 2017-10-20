@@ -1,0 +1,9 @@
+<div>
+  <p><%= t('edit_agent.title') %></p>
+  <%= simple_form_for :agent, url: update_agent_path, method: :get do |f| %>
+    <% t('edit_agent.agents').each do |key, value| %>
+      <%= f.button :submit, value: value, class: "btn btn-pink flexbox margin-bottom-small" %>
+    <% end %>
+  <% end %>
+</div>
+<%= render "shared/samu_call" %>

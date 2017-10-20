@@ -1,0 +1,14 @@
+<div>
+  <h1><%= t('edit_photo.title') %></h1>
+  <%= simple_form_for @case, url: update_photo_path, method: :get do |f| %>
+    <label class="text-center fileUpload">
+       <span class=""><i class="fa fa-camera upload"></i></span>
+       <%= f.input :photo, as: :attachinary, label: false %>
+    </label>
+      <%= f.button :submit, value: t('common.btn_next'), class: "btn btn-pink flexbox margin-bottom-small" %>
+  <% end %>
+  <%= link_to t('edit_photo.nophoto'), edit_case_path(@case), class: "btn btn-pink flexbox margin-bottom-small" %>
+
+
+</div>
+<%= render "shared/samu_call" %>
