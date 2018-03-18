@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20171020082718) do
     t.boolean "data_transmission"
     t.string "agent"
     t.string "way"
-    t.string "photo"
     t.string "photourl"
     t.string "age_type"
   end
